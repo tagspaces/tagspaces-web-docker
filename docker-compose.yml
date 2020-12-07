@@ -1,0 +1,15 @@
+version: '3.1'
+services:
+  tagspaces:
+    image: 'tagspaces'
+    container_name: tagspaces-docker
+    build:
+      context: tagspaces-docker
+      dockerfile: Dockerfile
+    networks:
+      - tsnet
+    ports:
+      - "8000:8000"
+networks:
+  tsnet:
+    driver: bridge
